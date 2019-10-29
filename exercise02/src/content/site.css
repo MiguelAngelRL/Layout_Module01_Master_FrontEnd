@@ -1,0 +1,21 @@
+@import "./reset.css";
+@import "./theme_01.css";
+
+body{
+    height: 100vh;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+div {
+    padding: 2% 0 0 1%;
+    width: 10%;
+    height: 12%;
+    border: 2px solid grey;
+}
+
+p {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
