@@ -1,0 +1,7 @@
+@mixin showPalette($colorPalette: ()){
+    @for $var from 1 through length($colorPalette) {
+        .item-#{$var} { //versión atacando las class de los div
+            background-color: nth($colorPalette, $var);
+        }
+    }
+}

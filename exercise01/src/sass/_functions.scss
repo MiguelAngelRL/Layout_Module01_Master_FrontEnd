@@ -1,0 +1,13 @@
+@function getPalette($baseColor: #777777, $colorGradient: 4, $gradient: 10%) {
+    
+    $color: darken($baseColor, ($gradient*$colorGradient));
+    $colorPalette: $color;
+    
+    @for $var from 1 through ($colorGradient*2) {
+        $color: lighten($color, $gradient);
+        $colorPalette: append($colorPalette, $color);
+    }
+
+    @return $colorPalette;
+}
+
