@@ -1,0 +1,38 @@
+@import "_reset";
+@import "_mixins";
+
+.container {
+    @include container_common;
+    @include container_tiny_resolution;
+}
+
+.menu {
+    @include menu_common;
+    @include menu_as_row_common;
+    @include menu_as_row_tiny_resolution;
+}
+
+@include contents_tiny_small_resolutions;
+
+@media screen and (min-width: 500px) and (max-width: 899px){
+    @include container_small_resolution;
+    @include menu_as_row_small_resolution;
+}
+
+@media screen and (min-width: 900px){
+    .menu {
+        @include menu_common;
+        @include menu_as_column_common;
+    }
+    @include contents_large_extralarge_resolutions;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px){
+    @include container_large_resolution;
+}
+
+@media screen and (min-width: 1200px){
+    @include container_extralarge_resolution;
+}
+
+
