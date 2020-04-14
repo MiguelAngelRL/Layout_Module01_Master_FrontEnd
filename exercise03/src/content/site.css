@@ -27,7 +27,7 @@ div.menu-bar {
     justify-content: space-between;
 }
 
-div.menuItem {
+div.menu-item {
     text-align: center;
     margin: 0.4%;
     padding: 0.2%;
@@ -49,7 +49,7 @@ div.menuItem {
     div.menu-container {
         justify-content: flex-end;
     }
-    #brand {
+    div.hidden-element {
         display: none;
     }
 }
