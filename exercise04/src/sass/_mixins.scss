@@ -1,32 +1,32 @@
 @import "_colors";
 
 @mixin container_common{
-        display: grid;
-        height: 100vh;
+    display: grid;
+    height: 100vh;
 }
 
 @mixin container_tiny_resolution {
     grid-template-rows: 1rem auto auto;
+    grid-template-areas: 
+        "menu"
+        "contentA"
+        "contentB";
 }
 
 @mixin container_small_resolution {
-    .container {
-        grid-template-rows: 20% auto auto;
-    }
+    grid-template-rows: 20% auto auto;
 }
 
 @mixin container_large_resolution {
-    .container {
-        grid-template-columns: 5% 30% 60% 5%;
-        grid-template-rows: 50% 50%;
-    }
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 5% 30% 60% 5%;
+    grid-template-areas: 
+        ".   menu    contentA    ."
+        ".   menu    contentB    .";
 }
 
 @mixin container_extralarge_resolution {
-    .container {
-        grid-template-columns: 10% 25% 55% 10%;
-        grid-template-rows: 50% 50%;
-    }
+    grid-template-columns: 10% 25% 55% 10%;
 }
 
 @mixin menu_common {
@@ -36,11 +36,11 @@
     & a {
         margin-right: 5px;
     }
+    grid-area: menu
 }
 
 @mixin menu_as_row_common {
     flex-direction: row;
-    grid-row-end: 2;
 }
 
 @mixin menu_as_row_tiny_resolution {
@@ -48,48 +48,22 @@
 }
 
 @mixin menu_as_row_small_resolution {
-    .menu {
-        justify-content: space-evenly;
-        align-items: center;
-    }
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 @mixin menu_as_column_common {
     flex-direction: column;
     justify-content: space-evenly;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-end: 3;
 }
 
-@mixin contents_tiny_small_resolutions {
+@mixin content_common {
     .content-a {
-        grid-row-start: 2;
-        grid-row-end: 3;
+        grid-area: contentA;
         background-color: $content_a_color;
     }
-
     .content-b {
-        grid-row-start: 3;
-        grid-row-end: 4;
-        background-color: $content_b_color;
-    }
-}
-
-@mixin contents_large_extralarge_resolutions {
-    .content-a {
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start: 1;
-        grid-row-end: 2;
-        background-color: $content_a_color;
-    }
-
-    .content-b {
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end: 3;
+        grid-area: contentB;
         background-color: $content_b_color;
     }
 }
