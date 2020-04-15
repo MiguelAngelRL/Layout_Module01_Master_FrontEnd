@@ -64,3 +64,6 @@ sandbox/
 
 # next.js build output
 .next
+
+#files
+package-lock.json
